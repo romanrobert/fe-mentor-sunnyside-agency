@@ -1,0 +1,122 @@
+
+.nav{
+    background-color: #3DBEFF;
+}
+.nav__wrapper{
+    width: 95%;
+    
+    margin: auto;
+    height: 7.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 9999;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 2.375rem;
+    font-family: 'Barlow', sans-serif;
+    color: $white;
+}
+
+.nav__links{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    
+    a{
+        margin:  2rem;
+        color: $white;
+    }
+
+    button{
+        width: 8.625rem;
+        height: 3.562rem;
+        border-radius: 28px;
+        background-color: $white;
+        border: none;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    button:hover{
+        
+            cursor: pointer;
+            color: $white;
+            background-color: #6ECDFF;
+        
+    }
+}
+
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+ 
+
+@media screen and (max-width: 690px){
+    
+    .burger{
+        display: block;
+        cursor: pointer;
+        span{
+            padding: 0.1rem 1rem;
+            margin: 0.3rem 0rem;
+            background: #fff;
+            display: block;
+            position: relative;
+            flex-basis: initial;
+            z-index: 1000;
+            transition: all 0.5s;
+        }
+    }
+
+    .nav{
+        width: 100%;
+        margin: auto;
+        
+    }
+
+    .nav__links{
+    position: absolute;
+    right: 5px;
+    left: 5px;
+    height: 20.562rem;
+    top: 7.125rem;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateY(-30%);
+    opacity: 0;
+    transition: transform 500ms ease, opacity 0.3s ease;
+
+
+    a{
+        color: $dark-grayish-blue
+    }
+    button{
+        background-color: $yellow;
+    }
+    }
+
+    .nav-open{
+        transform: translateY(10%);
+        opacity: 1;
+    }
+    .toggle .line1 {
+        transform: rotateZ(50deg) translateY(360%);
+      }
+      .toggle .line2 {
+        opacity: 0;
+      }
+    
+      .toggle .line3 {
+        transform: rotateZ(-50deg) translateY(-360%);
+      }
+}
